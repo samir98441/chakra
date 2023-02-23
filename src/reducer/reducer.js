@@ -93,6 +93,22 @@ const reducer = (state, action) => {
       }
       return { ...state, cart: newCart };
 
+    case "REDUCECART":
+      let updatedQuantity = state.cart.find(
+        (item) => item.PId === action.payload
+      );
+      if (updatedQuantity.quantity > 1) {
+        updatedQuantity = {
+          ...updatedQuantity,
+          quantity: updatedQuantity.quantity - 1,
+        };
+        let oldCart = state.cart.filter((item) => item.PId !== action.payload);
+        return { ...state, cart: [...oldCart, updatedQuantity] };
+      } else {
+        let oldCart = state.cart.filter((item) => item.PId !== action.payload);
+        return { ...state, cart: oldCart };
+      }
+
     default:
       return state;
   }

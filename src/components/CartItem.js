@@ -1,23 +1,41 @@
-import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 
-const CartItem = ({ name, price, quantity }) => {
+import { useDataContext } from "../context/ContextProvider";
+
+const CartItem = ({ PId, PName, Price, quantity }) => {
+  const { handleAddCart, handleReduceCart } = useDataContext();
+
   return (
-    <div>
+    <Flex justifyContent="space-around">
       <Box>
         <Image
-          boxSize="250px"
+          boxSize="100px"
           objectFit="cover"
           src="https://bit.ly/dan-abramov"
           alt="Dan Abramov"
         />
       </Box>
-      <div className="itemName">{name}</div>
-      <div className="itemPrice">
-        <Text fontSize="20px">Rs.{price}</Text>
-      </div>
-      <div>Quantity: {quantity}</div>
-    </div>
+      <Box>
+        <Box className="itemName">{PName}</Box>
+        <Box className="itemPrice">
+          <Text fontSize="20px">Rs.{Price}</Text>
+        </Box>
+      </Box>
+
+      <Box>
+        <Box>Quantity</Box>
+        <Flex alignItems="center" gap="5px">
+          <Button onClick={() => handleAddCart(PId)}>+</Button>
+          {quantity}
+          <Button onClick={() => handleReduceCart(PId)}>-</Button>
+        </Flex>
+      </Box>
+      <Box>
+        <Box>Total</Box>
+        <Box>{Price * quantity}</Box>
+      </Box>
+    </Flex>
   );
 };
 

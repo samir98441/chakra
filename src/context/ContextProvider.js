@@ -34,7 +34,7 @@ const ContextProvider = ({ children }) => {
   }, [state.products]);
 
   useEffect(() => {
-    console.log("cart", state.cart);
+    console.log("added to cart", state.cart);
   }, [state.cart]);
 
   useEffect(() => {
@@ -65,6 +65,10 @@ const ContextProvider = ({ children }) => {
     return dispatch({ type: "ADDTOCART", payload: PId });
   };
 
+  const handleReduceCart = (PId) => {
+    return dispatch({ type: "REDUCECART", payload: PId });
+  };
+
   return (
     <DataContext.Provider
       value={{
@@ -75,6 +79,7 @@ const ContextProvider = ({ children }) => {
         handleToggle,
         handleUpdate,
         handleAddCart,
+        handleReduceCart,
       }}
     >
       {children}

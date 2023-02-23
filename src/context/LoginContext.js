@@ -15,6 +15,9 @@ const LoginContext = createContext();
 const LoginContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const handleLogout = () => {
+    return dispatch({ type: "LOGOUT" });
+  };
   useEffect(() => {
     console.log("loginCheck", state.isLoggedIn);
   }, [state.isLoggedIn]);
@@ -23,7 +26,9 @@ const LoginContextProvider = ({ children }) => {
     return dispatch({ type: "LOGINVALIDATE", payload: values });
   };
   return (
-    <LoginContext.Provider value={{ ...state, handelLoginValidation }}>
+    <LoginContext.Provider
+      value={{ ...state, handelLoginValidation, handleLogout }}
+    >
       {children}
     </LoginContext.Provider>
   );

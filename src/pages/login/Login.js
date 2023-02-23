@@ -1,7 +1,7 @@
 import { Box, Button } from "@chakra-ui/react";
-import { Form, useFormik } from "formik";
+import { useFormik } from "formik";
 import React, { useEffect } from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useLoginContext } from "../../context/LoginContext";
 import "./login.css";
@@ -10,7 +10,6 @@ const Login = () => {
   const { handelLoginValidation, isLoggedIn } = useLoginContext();
   const navigate = useNavigate();
   useEffect(() => {
-    // console.log("sss", isLoggedIn);
     if (isLoggedIn) {
       console.log("navigate", isLoggedIn);
       navigate("/home");

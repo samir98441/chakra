@@ -1,5 +1,7 @@
 import { Navigate } from "react-router-dom";
 import { useLoginContext } from "../context/LoginContext";
+import Footer from "./footer/Footer";
+import Header from "./header/Header";
 
 export const ProtectedRoute = ({ children }) => {
   const { isLoggedIn } = useLoginContext();
@@ -7,5 +9,11 @@ export const ProtectedRoute = ({ children }) => {
   if (!isLoggedIn) {
     return <Navigate to="/login" replace />;
   }
-  return children;
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
 };

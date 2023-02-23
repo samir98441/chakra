@@ -1,7 +1,6 @@
 import React from "react";
 import { useDataContext } from "../../context/ContextProvider";
 import CartItem from "../../components/CartItem";
-import Header from "../../components/header/Header";
 
 const Cart = () => {
   const { cart } = useDataContext();

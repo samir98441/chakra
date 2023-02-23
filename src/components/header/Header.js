@@ -1,10 +1,12 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
-import { Avatar } from "@chakra-ui/react";
+import { Avatar, Button } from "@chakra-ui/react";
 import Search from "../Search";
+import { useLoginContext } from "../../context/LoginContext";
 
 const Header = () => {
+  const { handleLogout } = useLoginContext();
   return (
     <div className="header">
       <div className="logo">
@@ -32,6 +34,11 @@ const Header = () => {
           </li>
           <li>
             <Link to="/cart">Cart</Link>
+          </li>
+          <li>
+            <Button colorScheme="red" onClick={handleLogout}>
+              Logout
+            </Button>
           </li>
         </ul>
       </div>

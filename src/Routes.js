@@ -27,9 +27,7 @@ const Routess = () => {
             path="/home"
             element={
               <ProtectedRoute>
-                <Header />
                 <Home />
-                <Footer />
               </ProtectedRoute>
             }
           />
@@ -37,9 +35,7 @@ const Routess = () => {
             path="/cart"
             element={
               <ProtectedRoute>
-                <Header />
                 <Cart />
-                <Footer />
               </ProtectedRoute>
             }
           />
@@ -47,9 +43,7 @@ const Routess = () => {
             path="/about"
             element={
               <ProtectedRoute>
-                <Header />
                 <About />
-                <Footer />
               </ProtectedRoute>
             }
           />
@@ -57,9 +51,7 @@ const Routess = () => {
             path="/contact"
             element={
               <ProtectedRoute>
-                <Header />
                 <Contact />
-                <Footer />
               </ProtectedRoute>
             }
           />
@@ -67,9 +59,7 @@ const Routess = () => {
             path="/user"
             element={
               <ProtectedRoute>
-                <Header />
                 <User />
-                <Footer />
               </ProtectedRoute>
             }
           />

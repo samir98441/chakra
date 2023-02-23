@@ -1,4 +1,3 @@
-import { useTab } from "@chakra-ui/react";
 import { defaultUsers } from "../constants/constants";
 
 const reducer = (state, action) => {
@@ -13,7 +12,9 @@ const reducer = (state, action) => {
       if (result) {
         return { ...state, isLoggedIn: true };
       } else return { ...state, isLoggedIn: false };
-      break;
+
+    case "LOGOUT":
+      return { ...state, isLoggedIn: false };
     default:
       return state;
   }

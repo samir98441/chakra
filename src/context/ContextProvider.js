@@ -1,12 +1,12 @@
 import React, { createContext, useReducer, useContext, useEffect } from "react";
 import reducer from "../reducer/reducer";
-const defaultValue = {
-  PID: "",
-  PName: "",
-  PImageUrl: "",
-  UpdateToggle: false,
-  quantity: 0,
-};
+// const defaultValue = {
+//   PID: "",
+//   PName: "",
+//   PImageUrl: "",
+//   UpdateToggle: false,
+//   quantity: 0,
+// };
 const initialState = {
   products: [],
   searchValue: "",

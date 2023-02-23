@@ -1,21 +1,15 @@
-import Cart from "../pages/cart/Cart";
-
 const reducer = (state, action) => {
   const data = action.payload;
   switch (action.type) {
     case "LOADPRODUCTS":
       return { ...state, products: data };
-      break;
-
     case "ADDITEM":
       const addedState = state.products;
       const newData = [...addedState, data];
       state = { ...state, products: newData };
       return state;
-      break;
 
     case "SEARCH":
-      // const newSearch = [...state.searchValue, data];
       return { ...state, searchValue: data, searchedItem: [] };
 
     case "UPDATESEARCH":
@@ -26,14 +20,12 @@ const reducer = (state, action) => {
         }
       });
       return { ...state, searchedItem: addedItem };
-      break;
 
     case "REMOVEITEM":
       const newDeletedData = state.products.filter(
         (item) => item.PId !== action.payload
       );
       return { ...state, products: newDeletedData };
-      break;
 
     case "TOGGLE":
       let newVal;
@@ -47,7 +39,6 @@ const reducer = (state, action) => {
       });
       console.log("newToggle", newToggle);
       return { ...state, products: newToggle };
-      break;
 
     case "UPDATE":
       let id = action.payload.PId;
@@ -65,13 +56,11 @@ const reducer = (state, action) => {
         } else return item;
       });
       return { ...state, products: update };
-      break;
 
     case "ADDTOCART":
-      let newQuantity;
       let newCart;
       console.log("cartlength", state.cart);
-      if (state.cart.length != 0) {
+      if (state.cart.length !== 0) {
         // newCart = state.cart.map((item) => {
         //   if (item.PId === action.payload) {
         //     newQuantity = item.quantity + 1;
@@ -103,7 +92,6 @@ const reducer = (state, action) => {
         newCart = [{ ...newCart, quantity: 1 }];
       }
       return { ...state, cart: newCart };
-      break;
 
     default:
       return state;

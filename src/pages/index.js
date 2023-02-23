@@ -1,4 +1,4 @@
-export * from "./AboutUs";
+export * from "./aboutUs";
 export * from "./cart";
 export * from "./contactUs";
 export * from "./home";

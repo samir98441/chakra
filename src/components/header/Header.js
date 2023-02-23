@@ -2,7 +2,7 @@ import React from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
 import { Avatar } from "@chakra-ui/react";
-import Search from "./Search";
+import Search from "../Search";
 
 const Header = () => {
   return (

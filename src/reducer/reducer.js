@@ -1,4 +1,4 @@
-import Cart from "../components/header/Cart";
+import Cart from "../pages/cart/Cart";
 
 const reducer = (state, action) => {
   const data = action.payload;

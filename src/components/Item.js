@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./item.css";
 import { Text, Image, Box, Button, Input } from "@chakra-ui/react";
-import { useDataContext } from "../../context/ContextProvider";
+import { useDataContext } from "../context/ContextProvider";
 
 const Item = ({ PId, PName, Price, UpdateToggle }) => {
   const { handleRemove, handleUpdate, handleToggle, handleAddCart } =

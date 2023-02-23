@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import React, { useEffect, useState } from "react";
-import { useDataContext } from "../../context/ContextProvider";
+import { useDataContext } from "../context/ContextProvider";
 import "./additem.css";
 import { Button } from "@chakra-ui/react";
 import { useFormik } from "formik";

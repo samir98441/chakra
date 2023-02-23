@@ -1,14 +1,20 @@
-import { Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLoginContext } from "../context/LoginContext";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 
 export const ProtectedRoute = ({ children }) => {
+  const navigate = useNavigate();
   const { isLoggedIn } = useLoginContext();
   console.log("isloggedIn", isLoggedIn);
-  if (!isLoggedIn) {
-    return <Navigate to="/login" replace />;
-  }
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/login");
+    }
+  }, [isLoggedIn]);
+
   return (
     <>
       <Header />

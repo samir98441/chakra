@@ -6,9 +6,10 @@ import * as Yup from "yup";
 import { useLoginContext } from "../../context/LoginContext";
 import "./login.css";
 
-const Login = () => {
+const LoginPage = () => {
   const { handelLoginValidation, isLoggedIn } = useLoginContext();
   const navigate = useNavigate();
+  console.log("yaha kina aatyo");
   useEffect(() => {
     if (isLoggedIn) {
       console.log("navigate", isLoggedIn);
@@ -77,4 +78,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export { LoginPage };

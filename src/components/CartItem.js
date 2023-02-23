@@ -1,7 +1,7 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
-const CartItem = ({ name, price }) => {
+const CartItem = ({ name, price, quantity }) => {
   return (
     <div>
       <Box>
@@ -16,6 +16,7 @@ const CartItem = ({ name, price }) => {
       <div className="itemPrice">
         <Text fontSize="20px">Rs.{price}</Text>
       </div>
+      <div>Quantity: {quantity}</div>
     </div>
   );
 };

@@ -2,16 +2,22 @@ import React from "react";
 import { useDataContext } from "../../context/ContextProvider";
 import CartItem from "../../components/CartItem";
 
-const Cart = () => {
+const CartPage = () => {
   const { cart } = useDataContext();
   return (
     <div>
-      {console.log("incart", cart)}
       {cart.map((item) => {
-        return <CartItem key={item.Pid} name={item.PName} price={item.Price} />;
+        return (
+          <CartItem
+            key={item.Pid}
+            name={item.PName}
+            price={item.Price}
+            quantity={item.quantity}
+          />
+        );
       })}
     </div>
   );
 };
 
-export default Cart;
+export default CartPage;

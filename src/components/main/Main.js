@@ -1,8 +1,9 @@
-import Item from "../Item";
+import Item from "../item/Item";
 import { Flex } from "@chakra-ui/react";
-import AddItem from "../AddItem";
+import AddItem from "../addItem/AddItem";
 import "./main.css";
 import { useDataContext } from "../../context/ContextProvider";
+
 const Main = () => {
   const { products, searchedItem, searchValue } = useDataContext();
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../../components/body/Main";
+import Main from "../../components/main/Main";
 
 const HomePage = () => {
   return <Main />;

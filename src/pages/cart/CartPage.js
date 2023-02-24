@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDataContext } from "../../context/ContextProvider";
-import CartItem from "../../components/CartItem";
+
 import { Box, Flex } from "@chakra-ui/react";
+import CartItem from "../../components/cartItem/CartItem";
 
 const CartPage = () => {
   const { cart } = useDataContext();

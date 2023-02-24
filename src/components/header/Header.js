@@ -2,8 +2,9 @@ import React from "react";
 import "./header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { Avatar, Button } from "@chakra-ui/react";
-import Search from "../Search";
+
 import { useLoginContext } from "../../context/LoginContext";
+import Search from "../search/Search";
 
 const Header = () => {
   const { handleLogout } = useLoginContext();

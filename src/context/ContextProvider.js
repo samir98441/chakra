@@ -20,9 +20,13 @@ const ContextProvider = ({ children }) => {
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("products"));
+    const cartItems = JSON.parse(localStorage.getItem("cart"));
     console.log("First load", items);
     if (items) {
       dispatch({ type: "LOADPRODUCTS", payload: items });
+    }
+    if (cartItems) {
+      dispatch({ type: "LOADCARTS", payload: cartItems });
     }
   }, []);
 
@@ -34,7 +38,8 @@ const ContextProvider = ({ children }) => {
   }, [state.products]);
 
   useEffect(() => {
-    console.log("added to cart", state.cart);
+    if (state.products.length)
+      localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.cart]);
 
   useEffect(() => {

@@ -6,7 +6,7 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import React from "react";
-import { useDataContext } from "../context/ContextProvider";
+import { useDataContext } from "../../context/ContextProvider";
 
 const Search = () => {
   const { handleSearchItem, searchValue } = useDataContext();

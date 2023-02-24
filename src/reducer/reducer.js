@@ -3,6 +3,8 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "LOADPRODUCTS":
       return { ...state, products: data };
+    case "LOADCARTS":
+      return { ...state, cart: data };
     case "ADDITEM":
       const addedState = state.products;
       const newData = [...addedState, data];

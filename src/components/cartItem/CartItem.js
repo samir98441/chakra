@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 
-import { useDataContext } from "../context/ContextProvider";
+import { useDataContext } from "../../context/ContextProvider";
 
 const CartItem = ({ PId, PName, Price, quantity }) => {
   const { handleAddCart, handleReduceCart } = useDataContext();
